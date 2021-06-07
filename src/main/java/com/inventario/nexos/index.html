@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de inventario Nexos</title>
+</head>
+<body>
+<h1>INVENTARIO DE PIEZAS</h1>
+<form action="controller/PartController/parts/{id}" method="get">
+    <span>Id de pieza:</span>
+    <input type="text" name="id"/>
+    <input type="submit" value="Buscar por Id"/>
+</form>
+<br>
+<form action="controller/PartController/parts/all" method="get">
+    <input type="submit" value="Obtener inventario"/>
+</form>
+<br>
+<form action="controller/PartController/parts/devuelvepieza/{p}" method="get">
+    <span>Nombre de pieza:</span>
+    <input type="text" name="p"/>
+    <input type="submit" value="Buscar nombre de pieza"/>
+</form>
+<br>
+<form action="controller/PartController/parts/delete/{id}" method="post">
+    <span>Id de pieza:</span>
+    <input type="text" name="id"/>
+    <input type="submit" value="Borrar por Id"/>
+</form>
+<br>
+<form action="controller/PartController/parts/savesecure" method="post">
+    <span>Nombre de pieza:</span>
+    <input type="text" name="part"/><br>
+    <span>Nombre de usuario:</span>
+    <input type="text" name="user"/><br>
+    <span>Fecha de registro:</span>
+    <input type="datetime-local" name="dateRegister"/><br>
+    <input type="text" name="quantity"/>
+    <span>Usuario encargado:</span>
+    <input type="text" name="userchargued"/><br>
+    <span>Id de usuario:</span>
+    <input type="text" name="idUser"/><br>
+</form>
+<br>
+<form action="controller/PartController/parts/update/{id}" method="post">
+    <span>Id de pieza:</span>
+    <input type="text" name="id"/><br>
+    <span>Nombre de pieza:</span>
+    <input type="text" name="part"/><br>
+    <span>Nombre de usuario:</span>
+    <input type="text" name="user"/><br>
+    <span>Fecha de registro:</span>
+    <input type="datetime-local" name="dateRegister"/><br>
+    <input type="text" name="quantity"/>
+    <span>Usuario encargado:</span>
+    <input type="text" name="userchargued"/><br>
+    <span>Id de usuario:</span>
+    <input type="text" name="idUser"/><br>
+</form>
+
+</body>
+</html>
