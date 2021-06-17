@@ -40,7 +40,7 @@ public class PartController<idPart> {
 
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable("id") int idPart){
+    public boolean deleteById(@PathVariable("id") int idPart){
         partService.deleteById(idPart);
         return true;
         }
