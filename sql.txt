@@ -1,0 +1,49 @@
+
+-- -----------------------------------------------------
+-- Table "USUARIOS"
+-- -----------------------------------------------------
+CREATE TABLE  USUARIOS (
+  "idUsuario" SERIAL NOT NULL,
+  "nombre" VARCHAR(40) NULL,
+  "edad" NUMERIC NULL,
+  "cargo" VARCHAR(80) NULL,
+  "fechaingreso" DATE NULL,
+  PRIMARY KEY ("idUsuario")
+  );
+
+   -- -----------------------------------------------------
+-- Table "INVENTARIO"
+-- -----------------------------------------------------
+CREATE TABLE  INVENTARIO (
+  "id_pieza" SERIAL NOT NULL,
+  "pieza" VARCHAR(45) NULL,
+  "cantidad" INT NOT NULL,
+  "fechainventario" DATE NOT NULL,
+  "usuario_a_cargo" VARCHAR(100) NOT NULL,
+  "id_nombre" INT NOT NULL,
+  PRIMARY KEY ("id_pieza"),
+  CONSTRAINT "fk_INVENTARIO_USUARIOS"   
+  FOREIGN KEY ("id_nombre")
+  REFERENCES USUARIOS ("idUsuario"));
+
+-- USUARIOS
+INSERT INTO usuarios VALUES (1,'Mauricio', 32, 'Soporte', '2021/01/01');
+INSERT INTO usuarios VALUES (2,'Camila', 28, 'Soporte', '2020/01/01');
+INSERT INTO usuarios VALUES (3,'Juan Pablo', 26, 'Administrador', '2020/06/01');
+INSERT INTO usuarios VALUES (4,'Jennifer', 30, 'Asesor de ventas', '2021/01/15');
+
+-- INVENTARIO
+INSERT INTO inventario VALUES (1,'Amortiguadores', 20,'2021/02/23', 'Mauricio',1);
+INSERT INTO inventario VALUES (2,'Ventanas', 4, '2021/02/24', 'Mauricio',1);
+INSERT INTO inventario VALUES (3,'Volantes', 2, '2021/02/25', 'Mauricio',1);
+INSERT INTO inventario VALUES (4,'Caja de cambios', 8, '2021/01/13', 'Camila',2);
+INSERT INTO inventario VALUES (5,'Llantas', 12, '2021/01/16', 'Camila',2);
+INSERT INTO inventario VALUES (6,'Ejes', 3, '2021/01/21', 'Jennifer',4);
+INSERT INTO inventario VALUES (7,'Rines', 7, '2021/03/12', 'Camila',2);
+INSERT INTO inventario VALUES (8,'Plumillas', 6,  '2021/02/23', 'Juan Pablo',3);
+
+-- SE REINICIAN LAS SECUENCIAS SEGÚN LOS DATOS INICIALES
+SELECT setval('public.inventario_id_pieza_seq', 8, true);
+SELECT setval('public.usuarios_id_usuario_seq', 4, true);
+
+

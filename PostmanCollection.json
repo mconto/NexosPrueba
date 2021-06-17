@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "3a367b82-0286-45fc-a879-ffaaaf669273",
+		"name": "Nexos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAll(PIEZA)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"part\": \"Amortiguadores\",\r\n        \"dateRegister\": \"2021-02-23T00:00:00\",\r\n        \"quantity\": 77,\r\n        \"usercharged\": \"Mauricio\",\r\n        \"idUser\": \"1\"\r\n    }"
+				},
+				"url": {
+					"raw": "localhost:8090/parts/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"parts",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByNombre(PIEZA)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/parts/devuelvepieza/Amortiguadores",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"parts",
+						"devuelvepieza",
+						"Amortiguadores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll(USUARIO)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/users/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save(USUARIO)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Patricia\",\r\n        \"age\": 59,\r\n        \"rolluser\": \"Analista\",\r\n        \"datein\": \"2021-01-01T00:00:00\",\r\n        \"part\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/users/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveValidate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"part\": \"Ejes Gama media\",\r\n        \"dateRegister\": \"2021-01-23T00:00:00\",\r\n        \"quantity\": 7,\r\n        \"usercharged\": \"Mauricio\",\r\n        \"idUser\": \"1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/parts/savesecure",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"parts",
+						"savesecure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete(PIEZA)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Update(PIEZA)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"part\": \"Amortiguadores americanos\",\r\n        \"user\": {\r\n            \"idUser\": 1,\r\n            \"name\": \"Mauricio\",\r\n            \"age\": 32,\r\n            \"rolluser\": \"Soporte\",\r\n            \"datein\": \"2021-01-01T00:00:00\",\r\n            \"part\": null\r\n        },\r\n        \"dateRegister\": \"2021-02-23T00:00:00\",\r\n        \"quantity\": 333,\r\n        \"usercharged\": \"Mauricio\",\r\n        \"idUser\": \"1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/parts/update/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"parts",
+						"update",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
